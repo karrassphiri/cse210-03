@@ -1,41 +1,41 @@
-class TerminalService:
-    """A service that handles terminal operations.
-    
-    The responsibility of a TerminalService is to provide input and output operations for the 
-    terminal.
-    """
+"""
+    This class is responsible to display the game response
+ 
+    Author: Karrass
+"""
 
-    def read_text(self, prompt):
-        """Gets text input from the terminal. Directs the user with the given prompt.
 
-        Args: 
-            self (TerminalService): An instance of TerminalService.
-            prompt (string): The prompt to display on the terminal.
+class Terminal_service:
 
-        Returns: 
-            string: The user's input as text.
-        """
+    def __init__(self):
+        self._input_letter = ""
 
-        return input(prompt)
+    # this ask the player for a letter
+    def ask_players_input(self):
+        self._input_letter = input("Guess a letter [a-z]: ")
 
-    def read_number(self, prompt):
-        """Gets numerical input from the terminal. Directs the user with the given prompt.
+    # this returns players input
+    def get_players_input(self):
+        return self._input_letter
 
-        Args: 
-            self (TerminalService): An instance of TerminalService.
-            prompt (string): The prompt to display on the terminal.
+    # this displays the parachute graphic
+    def display_parachute_graphic(self, parachute):
 
-        Returns:
-            float: The user's input as a number.
-        """
+        for i in parachute:
+            print(i)
 
-        return float(input(prompt))
+    # this displays the "_" and letters
+    def display_empty_word(self, hiddenWord):
+        display = ""
+        for i in hiddenWord:
+            display += f" {i}"
+        display += "\n"
+        print(display)
 
-    def write_text(self, text):
-        """Displays the given text on the terminal. 
+    # this displays the game over message
+    def display_game_over(self):
+        print("Game over!!")
 
-        Args: 
-            self (TerminalService): An instance of TerminalService.
-            text (string): The text to display.
-        """
-        print(text)
+    # this displays the win message
+    def display_win_message(self):
+        print("You win!!")
