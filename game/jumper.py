@@ -18,7 +18,26 @@ class Jumper:
             
     def draw_jumper(self):
         #Parachute
-       
+        if self._level < 1:
+            print(" ___")
+        if self._level < 2:
+            print("/___\\")
+        if self._level < 3:
+            print("\   /")
+        if self._level < 4:
+            print(" \ /")
+
+        #Jumper head alive
+        if self._is_alive:
+            print("  o")
+            print(" /|\\")
+            print(" / \\")
+
+        #Jumper head dead
+        if not self._is_alive:
+            print("  x")
+            print(" /|\\")
+            print(" / \\")
     
     #getter and setter for is_alive
     def get_alive(self):

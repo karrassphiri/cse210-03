@@ -43,8 +43,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        new_location = self._terminal_service.read_word("\nGuess a letter [a-z]: ")
-        self._player.move_location(new_location)
+        new_location = self._terminal_service.ask_players_input()
+       # self._player.move_location(new_location)
         
     def _do_updates(self):
         """Keeps guessing secret word to jump.
@@ -52,7 +52,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self._word.watch_parachute(self._word)
+       # self._word.watch_parachute(self._word)
         
     def _do_outputs(self):
         """Provides a hint for the player to use.

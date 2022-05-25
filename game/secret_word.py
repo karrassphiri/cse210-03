@@ -25,11 +25,11 @@ class Secret_word:
 
         #return a single random word in CAPS
 
-        self._word_list = ["apple", "ability", "agency", "argue", "attack", "biscuit", "baby", "behavior", "blue", "budget",
-         "camel", "campaign", "choice", "cup", "crime", "dinosaur", "design", "draw", "difference", "despite", "elegance",
-         "education", "exactly", "executive", "evidence", "family", "fear", "follow", "forward", "future", "galaxy", "government"]
+        self._word_list = ["apple","agent", "attic", "blood", "books", "budget",
+         "camel", "cargo", "crime", "dried", "facts", "forest"]
         
         self._word = random.choice(self._word_list)
+        print(self._word)
         self._hidden_word()
 
     #this generates a list of "_"
