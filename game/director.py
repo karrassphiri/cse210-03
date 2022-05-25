@@ -1,6 +1,6 @@
-from game.terminal_service import TerminalService
-from game.secret_word import SecretWord
-from game.player_parachute import PlayerParachute
+from game.terminal_service import Terminal_service
+from game.secret_word import Secret_word
+from game.jumper import Jumper
 
 
 class Director:
@@ -21,12 +21,12 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-        self._secret = SecretWord()
+        self._secret = Secret_word()
         self._is_playing = True
-        self._parachute = PlayerParachute()
-        self._terminal_service = TerminalService()
+        self._jumper = Jumper()
+        self._terminal_service = Terminal_service()
         
-    def start_game(self):
+    def _start_game(self):
         """Starts the game by running the main game loop.
         
         Args:
