@@ -4,7 +4,7 @@ class jumper:
     
     Attributes:
         is_alive (boolean): Whether or not the jumper is alive
-        
+        _level: indicates the jumpers paraschute strength
     """
     
     def __init__(self):
@@ -17,6 +17,9 @@ class jumper:
         self._level = 0
             
     def draw_jumper(self):
+        """
+        Draws a jumper with three parts Parachute,Jumper Alive,Jumper Dead.
+        """
         #Parachute
         if self._level < 1:
             print(" ___")
