@@ -1,6 +1,6 @@
-from game.terminal_service import Terminal_service
-from game.secret_word import Secret_word
-from game.jumper import Jumper
+from game.secret_word import secret_word
+from game.terminal_service import terminal_service
+from game.jumper import jumper
 
 
 class Director:
@@ -21,10 +21,10 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-        self._secret = Secret_word()
         self._is_playing = True
-        self._jumper = Jumper()
-        self._terminal_service = Terminal_service()
+        self._secret = secret_word()
+        self._jumper = jumper()
+        self._terminal_service = terminal_service()
         
     def _start_game(self):
         """Starts the game by running the main game loop.
@@ -37,14 +37,19 @@ class Director:
             self._do_updates()
             self._do_outputs()
 
+    def _secret_word(self):
+        print(self._secret)
+        print(self._jumper.draw_jumper())
+
     def _get_inputs(self):
         """Jump further.
 
         Args:
             self (Director): An instance of Director.
         """
-        new_location = self._terminal_service.ask_players_input()
+        guess_word = self._terminal_service.ask_players_input()
        # self._player.move_location(new_location)
+       
         
     def _do_updates(self):
         """Keeps guessing secret word to jump.
@@ -60,7 +65,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        hint = self._word.get_hint()
-        self._terminal_service.write_text(hint)
-        if self._word.is_found():
-            self._is_playing = False
+        # hint = self._word.get_hint()
+        # self._terminal_service.write_text(hint)
+        # if self._word.is_found():
+        #     self._is_playing = False

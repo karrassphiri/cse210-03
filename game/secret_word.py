@@ -3,7 +3,7 @@ import random
 This class is risponsible for choosing randomly a secret word
 
 """
-class Secret_word:
+class secret_word:
     """This class is risponsible OF choosing a random secret word for the game
 
     Attributes:
@@ -15,32 +15,32 @@ class Secret_word:
   
 
     def __init__(self):
-        self._word = ""
-        self._word_list = []
-        self.word_characters_list = []
-        self._empty_word = []
+        self._word_list = ["apple", "agent"]
+        self._word = random.choice(self._word_list)
 
     #this generates a random word from the list
-    def secret_word(self):  
+    # def secret_word(self):  
 
-        #return a single random word in CAPS
+    #     #return a single random word in CAPS
 
-        self._word_list = ["apple","agent", "attic", "blood", "books", "budget",
-         "camel", "cargo", "crime", "dried", "facts", "forest"]
         
-        self._word = random.choice(self._word_list)
-        print(self._word)
-        self._hidden_word()
-
-    #this generates a list of "_"
-    def _hidden_word(self):
-
-        self.word_characters_list = list(self._word)
-        for each_character in range(len(self.word_characters_list)):
-            each_character = "_" * len(self.word_characters_list) 
-            self._empty_word = list(each_character) 
+    #     #["attic", "blood", "books", "budget",
+    #     # "camel", "cargo", "crime", "dried", "facts", "forest"]
         
-        return self._empty_word
+    #     #print(self._word)
+    #     #self._hidden_word()
+    #     return self._word
+        
+
+    # #this generates a list of "_"
+    # def _hidden_word(self):
+
+    #     self.word_characters_list = list(self._word)
+    #     for each_character in range(len(self.word_characters_list)):
+    #         each_character = "_" * len(self.word_characters_list) 
+    #         self._empty_word = list(each_character) 
+        
+    #     return self._empty_word
         
 
             

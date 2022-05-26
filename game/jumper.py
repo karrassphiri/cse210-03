@@ -1,5 +1,5 @@
 
-class Jumper:
+class jumper:
     """A person closer to ground when guessed wrong.
     
     Attributes:
@@ -38,6 +38,7 @@ class Jumper:
             print("  x")
             print(" /|\\")
             print(" / \\")
+            print("~~~~~~")
     
     #getter and setter for is_alive
     def get_alive(self):
